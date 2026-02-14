@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan Asia Impex - Your Trusted Import Partner Since 1991</title>
+    <meta name="description" content="Pan Asia Impex PVT LTD - Leading indenting agent in Sri Lanka since 1991. We help businesses import any product with expertise and reliability.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1a1a1a;
+            --color-secondary: #2d2d2d;
+            --color-accent: #c9a961;
+            --color-light: #f8f6f3;
+            --color-white: #ffffff;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Decorative background elements */
+        .bg-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-decoration::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-decoration::after {
+            content: '';
+            position: absolute;
+            bottom: -15%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(45, 45, 45, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(50px, 50px) scale(1.1);
+            }
+        }
+
+        /* Main content */
+        .content {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md);
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Logo section */
+        .logo-container {
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: var(--spacing-md);
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+        }
+
+        .company-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primary);
+        }
+
+        .company-tagline {
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Main card */
+        .main-card {
+            background: var(--color-white);
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-radius: 2px;
+            box-shadow: 
+                0 1px 3px rgba(0, 0, 0, 0.05),
+                0 10px 40px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+        }
+
+        .headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary);
+        }
+
+        .description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-secondary);
+            font-weight: 300;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            padding: var(--spacing-md) 0;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .feature-text {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-secondary);
+            font-weight: 400;
+        }
+
+        /* CTA Button */
+        .cta-container {
+            margin-top: var(--spacing-lg);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        .footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: var(--spacing-md);
+            font-size: 0.85rem;
+            color: var(--color-secondary);
+            font-weight: 300;
+            animation: fadeIn 1s ease-out 0.4s backwards;
+        }
+
+        .footer-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--color-accent);
+            margin: var(--spacing-sm) auto;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .company-name {
+                font-size: 2rem;
+            }
+
+            .headline {
+                font-size: 1.5rem;
+            }
+
+            .main-card {
+                padding: var(--spacing-md) var(--spacing-sm);
+            }
+
+            .logo {
+                width: 140px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-sm);
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .bg-decoration::before,
+            .bg-decoration::after {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .company-name {
+                font-size: 1.75rem;
+            }
+
+            .company-tagline {
+                font-size: 0.8rem;
+            }
+
+            .headline {
+                font-size: 1.35rem;
+            }
+
+            .description {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-decoration"></div>
+    
+    <div class="container">
+        <main class="content">
+            <div class="logo-container">
+                <img src="logo.png" alt="Pan Asia Impex Logo" class="logo">
+                <h1 class="company-name">Pan Asia Impex</h1>
+                <p class="company-tagline">Private Limited</p>
+            </div>
+
+            <div class="main-card">
+                <h2 class="headline">Your Gateway to Seamless Global Imports</h2>
+                
+                <p class="description">
+                    As Sri Lanka's trusted indenting agent, we specialize in connecting you with the world's finest products. From concept to delivery, we handle every detail of your import needs with precision and care.
+                </p>
+
+                <div class="features">
+                    <div class="feature-item">
+                        <span class="feature-number">1991</span>
+                        <span class="feature-text">Established</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">30+</span>
+                        <span class="feature-text">Years Experience</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">100%</span>
+                        <span class="feature-text">Dedicated Service</span>
+                    </div>
+                </div>
+
+                <p class="description">
+                    Whether you're importing industrial equipment, consumer goods, or specialized products, our expertise ensures a smooth, efficient process from start to finish.
+                </p>
+
+                <div class="cta-container">
+                    <a href="https://wa.me/94706723953" class="cta-button" target="_blank" rel="noopener noreferrer">
+                        <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Start Your Import Journey
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-divider"></div>
+            <p>&copy; 2025 Pan Asia Impex PVT LTD. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
